@@ -1,3 +1,11 @@
+@function p2r($px) {
+    @return $px/75 * 1rem;
+}
+
+@function p2r($px) {
+    @return $px/75 * 1rem;
+}
+
 .page_buddhachanting {
     width: 100vw;
     height: 100vh;
@@ -9,28 +17,28 @@
     overflow: hidden;
     position: relative;
     .buddha_statue {
-        width: p(200);
-        height: p(300);
+        width: p2r(200);
+        height: p2r(300);
         background: gold;
     }
 }
 
-$item-width: p(55); // 佛珠宽
-$item-height: p(55); // 佛珠高
+$item-width: p2r(55); // 佛珠宽
+$item-height: p2r(55); // 佛珠高
 $item-spacing: 36deg;
-$item-distance: p(130); // 控制珠子间距
+$item-distance: p2r(130); // 控制珠子间距
 $circleMoveTime: 0.6s; // 佛珠转动动画时间
 .circle_container_left {
-    width: p(300);
-    height: p(300);
+    width: p2r(300);
+    height: p2r(300);
     position: absolute;
-    left: p(-80);
-    bottom: p(-80);
+    left: p2r(-80);
+    bottom: p2r(-80);
     z-index: 9;
 
     .circle_item_wrapper {
-        width: p(310);
-        height: p(310);
+        width: p2r(310);
+        height: p2r(310);
         position: relative;
         cursor: pointer;
         transition: all $circleMoveTime;
@@ -43,8 +51,8 @@ $circleMoveTime: 0.6s; // 佛珠转动动画时间
         @for $i from 1 through 10 {
             &:nth-child(#{$i}) {
                 position: absolute;
-                left: p(130);
-                top: p(126);
+                left: p2r(130);
+                top: p2r(126);
                 width: $item-width;
                 height: $item-height;
                 background: url("./modules/images/bead.png") no-repeat;
@@ -57,22 +65,22 @@ $circleMoveTime: 0.6s; // 佛珠转动动画时间
         &.bigItem {
             width: $item-width * 1.38;
             height: $item-width * 1.38;
-            left: p(120);
-            top: p(120);
+            left: p2r(120);
+            top: p2r(120);
         }
     }
 }
 .circle_container_right {
-    width: p(300);
-    height: p(300);
+    width: p2r(300);
+    height: p2r(300);
     position: absolute;
-    right: p(-80);
-    bottom: p(-80);
+    right: p2r(-80);
+    bottom: p2r(-80);
     z-index: 9;
 
     .circle_item_wrapper {
-        width: p(310);
-        height: p(310);
+        width: p2r(310);
+        height: p2r(310);
         position: relative;
         cursor: pointer;
         transition: all $circleMoveTime;
@@ -85,8 +93,8 @@ $circleMoveTime: 0.6s; // 佛珠转动动画时间
         @for $i from 1 through 10 {
             &:nth-child(#{$i}) {
                 position: absolute;
-                left: p(130);
-                top: p(126);
+                left: p2r(130);
+                top: p2r(126);
                 width: $item-width;
                 height: $item-height;
                 background: url("./modules/images/bead.png") no-repeat;
@@ -99,12 +107,12 @@ $circleMoveTime: 0.6s; // 佛珠转动动画时间
         &.bigItem {
             width: $item-width * 1.38;
             height: $item-width * 1.38;
-            left: p(120);
-            top: p(120);
+            left: p2r(120);
+            top: p2r(120);
         }
     }
 }
-$textMoveTime: .72s; // 两个文案动画时间
+$textMoveTime: 0.72s; // 两个文案动画时间
 .left_text_move {
     position: absolute;
     top: 100vh;
@@ -114,7 +122,7 @@ $textMoveTime: .72s; // 两个文案动画时间
     z-index: 8;
     user-select: none;
     color: gold;
-    font-size: p(36);
+    font-size: p2r(36);
 
     @keyframes left_movesLeave {
         0% {
@@ -161,7 +169,7 @@ $textMoveTime: .72s; // 两个文案动画时间
     z-index: 8;
     user-select: none;
     color: gold;
-    font-size: p(36);
+    font-size: p2r(36);
 
     @keyframes textRightMoviesLeave {
         0% {
